@@ -31,5 +31,5 @@ main = do
       Right expr -> putStrLn "Roundtrip successful!" >> print expr
 
   where testExpr = mkList [ mkInt n | n <- [1..10] ]
-        env m = ClientEnv m url Nothing
+        env m = mkClientEnv m url
         url   = BaseUrl Http "localhost" 8080 ""
